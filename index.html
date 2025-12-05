@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./culturama-favico.png" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Pesquisa Culturama</title>
   </head>
   <body>
     <header>
+      <img src="./img/logo-culturama.png" alt="Logo Culturama" />
       <h1>Pesquisa Online</h1>
     </header>
 
@@ -18,7 +20,7 @@
 
           <legend>Dados Pessoais</legend>
           <label for="name">Nome:</label>
-          <input type="text" id="name" name="userName" required />
+          <input type="text" id="name" name="userName" pattern="[A-Za-zÀ-ÿ\s]{2,}" required />
           <br />
 
           <label for="age">Idade:</label>
@@ -30,11 +32,11 @@
           <br />
 
           <label for="email">Email:</label>
-          <input type="email" id="email" name="userEmail" required />
+          <input type="email" id="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" name="userEmail" required />
           <br />
 
           <label for="phoneNumber">Telefone:</label>
-          <input type="tel" id="phoneNumber" name="userPhoneNumber" pattern="[0-9]{11}" placeholder="DDD + número" />
+          <input type="tel" id="phoneNumber" name="userPhoneNumber" pattern="\d{2}\d{4,5}\d{4}" placeholder="DDD + número" title="Digite apenas números. Exemplo: 11987654321" />
           <br />
 
           <label for="image">Upload de imagem:</label>
@@ -97,7 +99,7 @@
           </select>
 
           <label for="city">Cidade:</label>
-          <input type="text" id="city" name="userCity" placeholder="Digite sua cidade" required />
+          <input type="text" id="city" name="userCity" placeholder="Digite sua cidade" pattern="[A-Za-zÀ-ÿ\s]{2,}" required />
         </fieldset>
 
         <fieldset>
@@ -155,7 +157,7 @@
           <input type="checkbox" name="userLgpd" id="userLgpdTerm" value="accepted" required />
           <label for="userLgpdTerm">Eu aceito participar da pesquisa</label>
           <br />
-          <input type="checkbox" name="userGetResult" id="getResult" value="accepted"/>
+          <input type="checkbox" name="userGetResult" id="getResult" value="accepted" />
           <label for="getResult">Quero receber o resultado da pesquisa no email</label>
         </fieldset>
 
